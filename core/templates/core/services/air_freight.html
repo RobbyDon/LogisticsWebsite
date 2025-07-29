@@ -1,0 +1,75 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Cargo Transportation{% endblock %}
+
+{% block content %}
+<section class="hero-service" style="background-image: url('{% static 'img/service_heroimag.jpg' %}');">
+  <div class="container d-flex flex-column justify-content-center align-items-center text-white h-100">
+    <h3 class="fw-bold display-9">Air Freight</h3>
+    <nav class="breadcrumb bg-transparent mt-2">
+      <a class="breadcrumb-item" href="{% url 'home' %}">Home</a>
+      <span class="breadcrumb-item active">Air Freight</span>
+    </nav>
+  </div>
+</section>
+<div class="container mt-4">
+  <div class="row">
+    <!-- Left Column: Stacked Hero Images (taller, minimal margin) -->
+    <div class="col-lg-7">
+    <div class="mb-3" style="background: url('{% static "img/cargo_image1.jpg" %}') center/cover no-repeat; height: 300px; border-radius: 6px;"></div>
+    <div class="mb-3" style="background: url('{% static "img/cargo_image2.jpg" %}') center/cover no-repeat; height: 300px; border-radius: 6px;"></div>
+    <div class="mb-3" style="background: url('{% static "img/cargo_image3.jpg" %}') center/cover no-repeat; height: 300px; border-radius: 6px;"></div>
+    </div>
+
+    <!-- Right Column: Buttons + Contact Card + Quote Form -->
+    <div class="col-lg-5 d-flex flex-column justify-content-between" style="gap: 12px;">
+      <!-- Buttons -->
+      <div style="max-width: 250px;" class="w-100">
+        <a href="{% url 'air_freight' %}" class="btn btn-outline-dark btn-sm w-100 mb-2">Air Freight</a>
+        <a href="{% url 'ocean_freight' %}" class="btn btn-outline-dark btn-sm w-100 mb-2">Ocean Freight</a>
+        <a href="{% url 'road_freight' %}" class="btn btn-outline-dark btn-sm w-100 mb-2">Road Freight</a>
+        <a href="{% url 'cargo_transportation' %}" class="btn btn-danger btn-sm w-100">Cargo Transportation</a>
+      </div>
+
+      <!-- Contact Card -->
+      <div class="card border-dark w-100" style="max-width: 250px;">
+        <div class="card-body">
+          <h6 class="fw-bold">LOCATION</h6>
+          <p><i class="fas fa-map-marker-alt me-1"></i> MICHIGAN, USA</p>
+          <h6 class="fw-bold">CALL CENTER</h6>
+          <p><i class="fas fa-phone me-1"></i> +1(438) 795 4491</p>
+        </div>
+      </div>
+
+      <!-- Quote Form -->
+      <div class="p-4 text-white w-100" style="background: #333; border-radius: 4px; max-width: 250px;">
+        <h5 class="fw-bold mb-3">Get A Free Quote</h5>
+        <form>
+          <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Full Name">
+          </div>
+          <div class="mb-3">
+            <input type="email" class="form-control" placeholder="Email">
+          </div>
+          <div class="mb-3">
+            <textarea class="form-control" rows="3" placeholder="Message"></textarea>
+          </div>
+          <button type="submit" class="btn btn-danger w-100">SEND MESSAGE</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Paragraph Section -->
+<div class="mt-4 p-4 border border-dark rounded" style="background: #f9f9f9;">
+  <p class="mb-0">
+    With over two decades of excellence in logistics and freight delivery, TitanProXpress ensures every shipment is handled with utmost care and delivered promptly. As a trusted logistics partner for businesses across Canada, the U.S., Europe, and Asia, we offer flexible freight solutions tailored to your needs — including same-day delivery and end-to-end cargo support.
+    <br><br>
+    Whether you're shipping from New York, Canada, or Portsmouth in the U.K., TitanProXpress guarantees safe packing, secure crating, and reliable delivery to any global destination. Our reputation as one of the top-rated freight companies in North America and beyond is built on consistency, speed, and customer satisfaction.
+    <br><br>
+    When your supply chain demands reliability, TitanProXpress delivers. From efficient air freight forwarding to custom cargo handling, we provide seamless national and international logistics solutions — ensuring your goods arrive safely and on schedule.
+  </p>
+</div>
+{% endblock %}

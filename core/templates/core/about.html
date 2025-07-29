@@ -1,0 +1,181 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+{% block content %}
+<section class="hero-service" style="background-image: url('{% static 'img/service_heroimag.jpg' %}');">
+  <div class="container d-flex flex-column justify-content-center align-items-center text-white h-100">
+    <h3 class="fw-bold display-9">About</h3>
+    <nav class="breadcrumb bg-transparent mt-2">
+      <a class="breadcrumb-item" href="{% url 'home' %}">Home</a>
+      <span class="breadcrumb-item active">About</span>
+    </nav>
+  </div>
+</section>
+<section class="who-we-are-section py-5" style="background: url('{% static 'img/carousel_4.jpg' %}') no-repeat center center; background-size: cover;">
+  <div class="container">
+    <div class="row align-items-center">
+      
+      <!-- Text Section -->
+      <div class="col-md-6 text-white">
+        <div class="d-flex align-items-center mb-3">
+          <i class="fas fa-globe fa-2x text-danger me-3"></i>
+          <h3 class="text-danger fw-bold mb-0">Who We Are ?</h3>
+        </div>
+        <p class="fs-5 fw-semibold text-white">
+          TitanProXpress is a leading global logistics and delivery company headquartered in Canada, serving customers across North America, Europe, and Asia. With a passion for reliability, speed, and professionalism, we are committed to connecting people and businesses through seamless logistics solutions.
+        </p>
+        <a href="/services/cargo-transportation/" class="btn btn-danger rounded-pill px-4 py-2 mt-3">Read More</a>
+      </div>
+
+      <!-- Image Section -->
+      <div class="col-md-6">
+        <img src="{% static 'img/carousel_4.jpg' %}" alt="Sprint Parcel Trucks" class="img-fluid rounded shadow">
+      </div>
+
+    </div>
+  </div>
+</section>
+<style>
+.tracking-hero {
+  background: url("{% static 'img/tracking_image.jpg' %}") no-repeat center center;
+  background-size: cover;
+  padding: 100px 0;
+  color: white;
+  position: relative;
+}
+
+.tracking-hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Optional dark overlay */
+  z-index: 1;
+}
+
+.tracking-hero .container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.tracking-content h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.tracking-content p {
+  font-size: 1rem;
+  max-width: 600px;
+}
+
+.tracking-actions {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.action-box {
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+  min-width: 120px;
+  transition: all 0.3s ease;
+}
+
+.action-box:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+}
+
+.action-box i {
+  display: block;
+  margin-bottom: 10px;
+}
+</style>
+<section class="tracking-hero">
+  <div class="container">
+    <div class="tracking-content">
+      <h2>Unbeatable Trucking and Transport Services</h2>
+      <p>Delivering reliable, fast, and affordable transport solutions across land, air, and sea to meet your logistics needs.</p>
+    </div>
+    <div class="tracking-actions">
+      <a href="https://wa.me/?text=Check%20out%20TitanProXpress%20for%20reliable%20logistics%20services%3A%20https%3A%2F%2Ftitanproxpress.com" target="_blank" class="action-box">
+        <i class="fas fa-user-friends fa-2x"></i>
+        <span>Tell Friend</span>
+      </a>
+      <a href="/about" class="action-box">
+        <i class="fas fa-file-alt fa-2x"></i>
+        <span>Read More</span>
+      </a>
+      <a href="mailto:info@titanproxpress.com" class="action-box">
+        <i class="fas fa-envelope fa-2x"></i>
+        <span>Contact Us</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="py-5 position-relative bg-light">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-2"><i class="fas fa-truck text-danger me-2"></i> Our Service</h2>
+    <p class="text-muted mb-5">
+      Our experienced staff, combined with our global network, allow us to provide the support you need.
+    </p>
+    
+    <div class="row align-items-center">
+      
+      <!-- Left Column -->
+      <div class="col-md-4 text-center text-md-end mb-4 mb-md-0">
+        <div class="mb-4">
+          <i class="fas fa-truck fa-2x text-danger mb-2"></i>
+          <h5 class="fw-bold">Cargo Transportation</h5>
+          <p class="small text-muted">We offer the cheapest rates for the best service to and from United States, for air and sea freight.</p>
+        </div>
+        <div>
+          <i class="fas fa-plane fa-2x text-danger mb-2"></i>
+          <h5 class="fw-bold">Air Freight</h5>
+          <p class="small text-muted">We offer shipment of goods through air carrier. Air transport services are most valuable for express deliveries globally.</p>
+        </div>
+      </div>
+
+      <!-- Center Image -->
+      <div class="col-md-4 d-flex justify-content-center">
+        <img src="{% static 'img/cargo_image2.jpg' %}" class="img-fluid rounded-circle shadow" alt="Service Image" style="max-width: 250px; height: auto;">
+      </div>
+
+      <!-- Right Column -->
+      <div class="col-md-4 text-center text-md-start mt-4 mt-md-0">
+        <div class="mb-4">
+          <i class="fas fa-ship fa-2x text-danger mb-2"></i>
+          <h5 class="fw-bold">Ocean Freight</h5>
+          <p class="small text-muted">First Class Package Service offers greater savings compared to Priority Mail and Parcel Select Ground.</p>
+        </div>
+        <div>
+          <i class="fas fa-box-open fa-2x text-danger mb-2"></i>
+          <h5 class="fw-bold">Packaging & Storage</h5>
+          <p class="small text-muted">We provide services to ensure all parcels under us are delivered untampered and satisfy customer needs.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Show All Button -->
+    <div class="mt-5">
+      <a href="{% url 'cargo_transportation' %}" class="btn btn-danger rounded-pill px-4 py-2">
+        Show all <i class="fas fa-arrow-right ms-2"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+{% endblock %}

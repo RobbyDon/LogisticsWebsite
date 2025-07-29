@@ -1,0 +1,155 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}TitanProXpress{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ✅ Shared Navbar -->
+<div class="bg-dark text-light py-2 small fixed-top-bar">
+  <div class="container d-flex justify-content-between align-items-center flex-wrap">
+    <div>
+      <span class="me-3"><i class="fas fa-phone-alt me-1"></i> +1(438) 795 4491</span>
+      <span><i class="fas fa-envelope me-1"></i> info@titanproxpress.com</span>
+    </div>
+    <div class="d-flex align-items-center gap-2">
+      <select class="form-select form-select-sm w-auto">
+        <option value="en">English</option>
+        <option value="fr">Français</option>
+        <option value="es">Español</option>
+      </select>
+      <a href="#" class="text-light ms-2"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="text-light ms-2"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="text-light ms-2"><i class="fab fa-x-twitter"></i></a>
+    </div>
+  </div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #1b1f3b;">
+  <div class="container">
+    <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="{% url 'home' %}">
+      <img src="{% static 'img/logo.png' %}" alt="TitanProXpress Logo" style="height: 30px;">
+      TitanProXpress
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-center">
+    <li class="nav-item">
+      <a class="nav-link {% if request.resolver_match.url_name == 'home' %}active text-white fw-bold{% endif %}" href="{% url 'home' %}">Home</a>
+    </li>
+
+        <li class="nav-item">
+          <a class="nav-link {% if request.resolver_match.url_name == 'about' %}active text-white fw-bold{% endif %}" href="{% url 'about' %}">About</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link {% if request.resolver_match.url_name == 'track' %}active text-white fw-bold{% endif %}" href="{% url 'track' %}">Tracking</a>
+        </li>
+        
+        <!-- Services Dropdown -->
+<li class="nav-item dropdown">
+  <a 
+    class="nav-link dropdown-toggle {% if request.resolver_match.url_name == 'cargo_transportation' or request.resolver_match.url_name == 'air_freight' or request.resolver_match.url_name == 'ocean_freight' or request.resolver_match.url_name == 'road_freight' %}active text-white fw-bold{% endif %}" 
+    href="#" 
+    id="servicesDropdown" 
+    role="button" 
+    data-bs-toggle="dropdown" 
+    aria-expanded="false"
+  >
+    Services
+  </a>
+  <ul class="dropdown-menu bg-dark text-white" aria-labelledby="servicesDropdown">
+    <li><a class="dropdown-item text-white" href="{% url 'cargo_transportation' %}">Cargo Transportation</a></li>
+    <li><a class="dropdown-item text-white" href="{% url 'air_freight' %}">Air Freight</a></li>
+    <li><a class="dropdown-item text-white" href="{% url 'ocean_freight' %}">Ocean Freight</a></li>
+    <li><a class="dropdown-item text-white" href="{% url 'road_freight' %}">Road Freight</a></li>
+  </ul>
+</li>
+  <li class="nav-item">
+    <a class="nav-link {% if request.resolver_match.url_name == 'contact' %}active text-white fw-bold{% endif %}" href="{% url 'contact' %}">Contact</a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link" href="#"><i class="fas fa-search"></i></a>
+</li>
+
+  <li class="nav-item ms-2">
+    <a class="btn btn-danger fw-semibold px-4 py-2" href="#">Get a Quote</a>
+  </li>
+    </ul>
+    </div>
+  </div>
+</nav>
+
+  {% block content %}{% endblock %}
+
+<!-- Shared Footer -->
+ <footer class="footer bg-dark text-light pt-5 pb-4">
+  <div class="container">
+    <div class="row gy-4">
+      <!-- Logo and About -->
+      <div class="col-md-4">
+        <img src="{% static 'img/logo.png' %}" alt="TitanProXpress Logo" style="height: 40px;">
+        <p class="mt-3 small text-muted">
+          TitanProXpress offers reliable logistics services via road, air, and ocean freight. We deliver your packages swiftly and safely across the globe.
+        </p>
+        <div class="d-flex gap-2 mt-2">
+          <a href="#" class="text-light small"><i class="fab fa-facebook-f fa-sm"></i></a>
+          <a href="#" class="text-light small"><i class="fab fa-instagram fa-sm"></i></a>
+          <a href="#" class="text-light small"><i class="fab fa-x-twitter fa-sm"></i></a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-md-2">
+        <h6 class="fw-bold">Quick Links</h6>
+        <ul class="list-unstyled small">
+          <li><a href="{% url 'home' %}" class="text-light text-decoration-none">Home</a></li>
+          <li><a href="{% url 'cargo_transportation' %}" class="text-light text-decoration-none">Services</a></li>
+          <li><a href="#" class="text-light text-decoration-none">About</a></li>
+          <li><a href="#" class="text-light text-decoration-none">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div class="col-md-3">
+        <h6 class="fw-bold">Our Services</h6>
+        <ul class="list-unstyled small">
+          <li><a href="#" class="text-light text-decoration-none">Cargo Transportation</a></li>
+          <li><a href="#" class="text-light text-decoration-none">Air Freight</a></li>
+          <li><a href="#" class="text-light text-decoration-none">Ocean Freight</a></li>
+          <li><a href="#" class="text-light text-decoration-none">Packaging & Storage</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-md-3">
+        <h6 class="fw-bold">Contact Us</h6>
+        <ul class="list-unstyled small">
+          <li><i class="fas fa-map-marker-alt fa-sm me-2 text-danger"></i>Canada | US | Nigeria</li>
+          <li><i class="fas fa-phone fa-sm me-2 text-danger"></i>+1 (438) 795 4491</li>
+          <li><i class="fas fa-envelope fa-sm me-2 text-danger"></i>info@titanproxpress.com</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-top pt-3 mt-4 text-center small text-muted">
+      &copy; {{ now.year }} TitanProXpress. All rights reserved.
+    </div>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{% static 'script.js' %}"></script>
+
+</body>
+</html>

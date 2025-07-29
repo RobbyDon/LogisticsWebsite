@@ -1,0 +1,213 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Road Freight{% endblock %}
+
+{% block content %}
+
+
+<section class="hero-service" style="background-image: url('{% static 'img/service_heroimag.jpg' %}');">
+  <div class="container d-flex flex-column justify-content-center align-items-center text-white h-100">
+    <h3 class="fw-bold display-9">Road Freight</h3>
+    <nav class="breadcrumb bg-transparent mt-2">
+      <a class="breadcrumb-item" href="{% url 'home' %}">Home</a>
+      <span class="breadcrumb-item active">Road Freight</span>
+    </nav>
+  </div>
+</section>
+<!-- Carousel + Buttons + Contact Section -->
+<section class="py-4">
+  <div class="container">
+    <div class="row g-4 align-items-stretch">
+      
+<!-- Carousel (Left) -->
+<div class="col-lg-8">
+  <div id="cargoCarousel" class="carousel slide h-100" data-bs-ride="carousel" data-bs-interval="4000">
+    <div class="carousel-inner h-100">
+      <div class="carousel-item active h-100">
+        <img src="{% static 'img/cargo_image1.jpg' %}" class="d-block w-100 h-100 object-fit-cover" alt="Cargo 1">
+      </div>
+      <div class="carousel-item h-100">
+        <img src="{% static 'img/cargo_image2.jpg' %}" class="d-block w-100 h-100 object-fit-cover" alt="Cargo 2">
+      </div>
+      <div class="carousel-item h-100">
+        <img src="{% static 'img/cargo_image3.jpg' %}" class="d-block w-100 h-100 object-fit-cover" alt="Cargo 3">
+      </div>
+    </div>
+
+    <!-- 👇 Controls go here inside the #cargoCarousel div -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#cargoCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#cargoCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+
+
+      <!-- Buttons + Contact (Right) -->
+      <div class="col-lg-4 d-flex flex-column justify-content-between">
+        
+        <!-- Navigation Buttons -->
+        <div class="mb-4" style="max-width: 250px;">
+          <a href="{% url 'air_freight' %}" class="btn btn-outline-dark btn-sm w-100 mb-2">Air Freight</a>
+          <a href="{% url 'ocean_freight' %}" class="btn btn-outline-dark btn-sm w-100 mb-2">Ocean Freight</a>
+          <a href="{% url 'road_freight' %}" class="btn btn-outline-dark btn-sm w-100 mb-2">Road Freight</a>
+          <a href="{% url 'cargo_transportation' %}" class="btn btn-danger btn-sm w-100">Cargo Transportation</a>
+        </div>
+
+        <!-- Contact Card -->
+        <div class="card shadow-sm border border-dark mt-auto" style="max-width: 250px;">
+          <div class="card-body text-center">
+            <h6 class="fw-bold text-uppercase mb-2">Location</h6>
+            <p class="small text-muted mb-3">
+              <i class="fas fa-map-marker-alt text-danger me-2"></i>Canada | US | Nigeria
+            </p>
+            <h6 class="fw-bold text-uppercase mb-2">Call Center</h6>
+            <p class="small text-muted">
+              <i class="fas fa-phone-alt text-danger me-2"></i>+1 (438) 795 4491
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container my-5">
+  <div class="row align-items-stretch">
+    
+    <!-- Left: Paragraph -->
+    <div class="col-lg-7 mb-4 mb-lg-0">
+      <div class="p-4 h-100 bg-light d-flex flex-column justify-content-center" style="border: 1px solid #ddd;">
+        <p>
+          With over two decades of excellence in logistics and freight delivery, <strong>TitanProXpress</strong> ensures every shipment is handled with utmost care and delivered promptly. As a trusted logistics partner for businesses across Canada, the U.S., Europe, and Asia, we offer flexible freight solutions tailored to your needs — including same-day delivery and end-to-end cargo support.
+        </p>
+        <p>
+          Whether you're shipping from New York, Canada, or Portsmouth in the U.K., TitanProXpress guarantees safe packing, secure crating, and reliable delivery to any global destination. Our reputation as one of the top-rated freight companies in North America and beyond is built on consistency, speed, and customer satisfaction.
+        </p>
+        <p>
+          When your supply chain demands reliability, TitanProXpress delivers. From efficient air freight forwarding to custom cargo handling, we provide seamless national and international logistics solutions — ensuring your goods arrive safely and on schedule.
+        </p>
+      </div>
+    </div>
+
+    <!-- Right: Contact Form -->
+    <div class="col-lg-5">
+      <div class="p-4 h-100 text-white" style="background-color: #000;">
+        <h5 class="mb-4 text-center fw-bold">GET A FREE QUOTE</h5>
+        <form>
+          <div class="mb-3">
+            <label for="name" class="form-label text-white">Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Your Name">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label text-white">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Your Email">
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label text-white">Message</label>
+            <textarea class="form-control" id="message" rows="4" placeholder="Your Message"></textarea>
+          </div>
+          <div class="d-grid">
+            <button type="submit" class="btn btn-danger">Send Message</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>
+<style>
+.tracking-hero {
+  background: url("{% static 'img/tracking_image.jpg' %}") no-repeat center center;
+  background-size: cover;
+  padding: 100px 0;
+  color: white;
+  position: relative;
+}
+
+.tracking-hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Optional dark overlay */
+  z-index: 1;
+}
+
+.tracking-hero .container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.tracking-content h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.tracking-content p {
+  font-size: 1rem;
+  max-width: 600px;
+}
+
+.tracking-actions {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.action-box {
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+  min-width: 120px;
+  transition: all 0.3s ease;
+}
+
+.action-box:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+}
+
+.action-box i {
+  display: block;
+  margin-bottom: 10px;
+}
+</style>
+<section class="tracking-hero">
+  <div class="container">
+    <div class="tracking-content">
+      <h2>Unbeatable Trucking and Transport Services</h2>
+      <p>Delivering reliable, fast, and affordable transport solutions across land, air, and sea to meet your logistics needs.</p>
+    </div>
+    <div class="tracking-actions">
+      <a href="https://wa.me/?text=Check%20out%20TitanProXpress%20for%20reliable%20logistics%20services%3A%20https%3A%2F%2Ftitanproxpress.com" target="_blank" class="action-box">
+        <i class="fas fa-user-friends fa-2x"></i>
+        <span>Tell Friend</span>
+      </a>
+      <a href="/about" class="action-box">
+        <i class="fas fa-file-alt fa-2x"></i>
+        <span>Read More</span>
+      </a>
+      <a href="mailto:info@titanproxpress.com" class="action-box">
+        <i class="fas fa-envelope fa-2x"></i>
+        <span>Contact Us</span>
+      </a>
+    </div>
+  </div>
+</section>
+  
+{% endblock %}

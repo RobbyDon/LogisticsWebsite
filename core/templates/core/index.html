@@ -1,0 +1,470 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+{% block title %}Home - TitanProXpress{% endblock %}
+{% block content %}
+
+<!-- Hero Carousel -->
+<div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'img/carousel_1.jpg' %}" class="d-block w-100" alt="Slide 1">
+      <div class="carousel-caption">
+        <h1>MAKING TRANSPORTATION<br>FAST & CHEAPER</h1>
+        <a href="mailto:info@titanproxpress.com?subject=Logistics%20Enquiry&body=Hello%20TitanProXpress%2C%0AI'm%20interested%20in%20your%20services..." class="btn">Contact Us</a>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'img/carousel_2.jpg' %}" class="d-block w-100" alt="Slide 2">
+      <div class="carousel-caption">
+        <h1>DELIVERY<br>FAST & CHEAPER</h1>
+        <a href="mailto:info@titanproxpress.com?subject=Logistics%20Enquiry&body=Hello%20TitanProXpress%2C%0AI'm%20interested%20in%20your%20services..." class="btn">Contact Us</a>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'img/carousel_3.jpg' %}" class="d-block w-100" alt="Slide 3">
+      <div class="carousel-caption">
+        <h1>MAKING LOGISTICS<br>FAST & CHEAPER</h1>
+        <a href="mailto:info@titanproxpress.com?subject=Logistics%20Enquiry&body=Hello%20TitanProXpress%2C%0AI'm%20interested%20in%20your%20services..." class="btn">Contact Us</a>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'img/carousel_4.jpg' %}" class="d-block w-100" alt="Slide 4">
+      <div class="carousel-caption">
+        <h1>MAKING TRANSPORTATION<br>FAST & SAFE</h1>
+       <a id="contactBtn"
+      href="mailto:info@titanproxpress.com?subject=Logistics%20Enquiry&body=Hello%20TitanProXpress,%0AI'm%20interested%20in%20your%20services..."
+      class="btn btn-danger">
+      Contact Us
+      </a>
+ 
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+
+  <!-- Overlay Cards on Bottom of Hero -->
+  <div class="hero-overlay-cards">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card">
+          <i class="fas fa-truck fa-2x text-danger mb-3"></i>
+          <h5 class="fw-bold">Road Freight</h5>
+          <p>Reliable road transport across towns and countries with prompt delivery.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <i class="fas fa-plane fa-2x text-danger mb-3"></i>
+          <h5 class="fw-bold">Air Freight</h5>
+          <p>Speedy air freight for urgent cargo, globally delivered on schedule.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <i class="fas fa-ship fa-2x text-danger mb-3"></i>
+          <h5 class="fw-bold">Ocean Freight</h5>
+          <p>Secure and efficient sea shipping for bulk and international cargo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  #heroCarousel {
+      height: 100vh;
+      margin-top: 84px;
+      position: relative;
+    }
+
+    .carousel-item img {
+      height: 100vh;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .carousel-caption {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      padding-left: 6%;
+      text-align: left;
+    }
+
+    .carousel-caption h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      line-height: 1.3;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+    }
+
+    .carousel-caption .btn {
+      font-size: 1.1rem;
+      padding: 12px 30px;
+      background-color: #dc3545;
+      border: none;
+      margin-top: 20px;
+      color: #fff;
+    }
+
+    .carousel-caption .btn {
+      font-size: 1.1rem;
+      padding: 12px 30px;
+      background-color: #dc3545;
+      border: none;
+      margin-top: 20px;
+      color: #fff;
+    }
+        .hero-overlay-cards {
+      position: absolute;
+      bottom: 2%;
+      left: 0;
+      width: 100%;
+      padding: 0 5%;
+      z-index: 1060;
+    }
+
+    .hero-overlay-cards .card {
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      padding: 8px;
+      text-align: center;
+      height: 100%;
+    }
+
+    .hero-overlay-cards .card p {
+      font-size: 0.8rem;
+    }
+
+</style>
+
+{% if tracking_result %}
+  <div id="trackingResultCard" class="card shadow p-4 mb-4 border-success position-relative" style="border-left: 5px solid #198754;">
+    <button type="button" class="btn-close position-absolute top-0 end-0 m-3" aria-label="Close"
+      onclick="document.getElementById('trackingResultCard').style.display='none';"></button>
+
+    {% if tracking_result == "not_found" %}
+      <h5 class="text-danger">Tracking ID not found. Please check and try again.</h5>
+    {% else %}
+      <!-- Header -->
+      <div class="text-center mb-4">
+        <img src="{% static 'img/logo.png' %}" alt="TitanPro Xpress Logo" height="60">
+        <h4 class="mt-2 mb-1 text-dark">TitanPro Xpress Logistics</h4>
+        <small class="text-muted">Phone: +1(438) 795 4491 | Email: info@titanproxpress.com</small>
+        <hr style="border-top: 2px solid #198754; width: 100px; margin: 1rem auto;">
+        <h5 class="text-success fw-bold">Tracking Details</h5>
+      </div>
+
+      <!-- Tracking Content with Watermark -->
+      <div id="trackingContent" style="position: relative;">
+        <div style="position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%); opacity: 0.07; font-size: 5rem; color: #198754; z-index: 0; pointer-events: none;">
+          TITANPRO XPRESS
+        </div>
+
+        <div class="row" style="position: relative; z-index: 1;">
+          <div class="col-md-6">
+            <p><strong>Tracking ID:</strong> {{ tracking_result.tracking_id }}</p>
+            <p><strong>Customer Name:</strong> {{ tracking_result.customer_name }}</p>
+            <p><strong>Origin:</strong> {{ tracking_result.origin }}</p>
+            <p><strong>Destination:</strong> {{ tracking_result.destination }}</p>
+          </div>
+          <div class="col-md-6">
+            <p><strong>Current Location:</strong> {{ tracking_result.current_location }}</p>
+            <p><strong>Item:</strong> {{ tracking_result.item }}</p>
+            <p><strong>Weight (KG):</strong> {{ tracking_result.weight }}</p>
+            <p><strong>Status:</strong> {{ tracking_result.status }}</p>
+          </div>
+        </div>
+        <p class="text-muted"><strong>Last Updated:</strong> {{ tracking_result.updated_at|date:"F j, Y, g:i a" }}</p>
+      </div>
+
+      <!-- Download Button -->
+      <div class="text-end">
+        <button onclick="printTracking()" class="btn btn-outline-success mt-3">
+          <i class="bi bi-download"></i> Download Details
+        </button>
+      </div>
+    {% endif %}
+  </div>
+
+  <script>
+    function printTracking() {
+      var content = document.getElementById("trackingContent").innerHTML;
+      var logo = '{{ request.build_absolute_uri }}/static/img/logo.png';
+      var win = window.open('', '', 'width=800,height=600');
+      win.document.write('<html><head><title>Tracking Details - TitanPro Xpress</title>');
+      win.document.write('<style>body{font-family: Arial;padding:20px; position:relative;}h2{color:#198754;}p{margin-bottom:8px;} .header{text-align:center; margin-bottom:20px;} hr{border:1px solid #198754; width:100px; margin:auto;} .watermark{position:absolute; top:40%; left:50%; transform:translate(-50%, -50%); font-size:4rem; color:#198754; opacity:0.07; z-index:0;}</style>');
+      win.document.write('</head><body>');
+      win.document.write('<div class="header"><img src="' + logo + '" height="50"/><h2>TitanPro Xpress Logistics</h2><small>Phone: +234 807 397 0097 | Email: info@titanproxpress.com</small><hr></div>');
+      win.document.write('<div class="watermark">TITANPRO XPRESS</div>');
+      win.document.write('<div style="position: relative; z-index: 1;">' + content + '</div>');
+      win.document.write('</body></html>');
+      win.document.close();
+      win.print();
+    }
+  </script>
+{% endif %}
+
+
+<style>
+  .tracking-hero {
+    background: url("{% static 'img/tracking_image.jpg' %}") no-repeat center center;
+    background-size: cover;
+  }
+</style>
+
+<div class="tracking-hero text-white text-center py-5 mt-5" style="padding-top: 130px;">
+  <div class="container bg-dark bg-opacity-50 p-4 rounded">
+    <h1 class="display-4 fw-bold">Track Your Shipment</h1>
+    <p class="lead">Get real-time delivery status anywhere, anytime.</p>
+    <div class="row justify-content-center">
+      <div class="col-md-10 col-lg-8">
+     <form method="post" action="{% url 'home' %}" class="tracking-form">
+      {% csrf_token %}
+         <div class="row">
+         <div class="col-md-9 mb-2">
+         <input type="text" name="tracking_id" class="form-control form-control-lg" placeholder="Enter Tracking Number" required>
+         </div>
+         <div class="col-md-3 mb-2">
+         <button type="submit" class="btn btn-danger btn-lg w-100">Track</button>
+         </div>
+         </div>
+  </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Service Cards -->
+<section class="service-cards py-5 bg-light">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <i class="fas fa-road fa-2x mb-3 text-danger"></i>
+            <h5 class="card-title fw-bold">Road Freight</h5>
+            <p class="card-text">Efficient road delivery services across cities and states.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <i class="fas fa-plane fa-2x mb-3 text-danger"></i>
+            <h5 class="card-title fw-bold">Air Freight</h5>
+            <p class="card-text">Fast and secure air shipping for time-sensitive packages.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <i class="fas fa-ship fa-2x mb-3 text-danger"></i>
+            <h5 class="card-title fw-bold">Ocean Freight</h5>
+            <p class="card-text">Global ocean cargo solutions at competitive rates.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div class="container py-5 mt-5">
+  <div class="row g-4 align-items-start">
+    <div class="col-lg-6">
+      <h2 class="fw-bold mb-3">Who We Are</h2>
+      <p>
+        TitanProXpress is a leading global logistics and delivery company headquartered in Canada,
+        serving customers across North America, Europe, and Asia. With a passion for reliability,
+        speed, and professionalism, we are committed to connecting people and businesses through
+        seamless logistics solutions.
+      </p>
+      <div class="mb-4 ms-3">
+      <a href="{% url 'track' %}" class="btn btn-danger px-4 py-2">Track Shipment</a>
+      </div>
+     
+  
+      <div class="accordion-section">
+        <div class="accordion-header"><i class="fas fa-star"></i>Why Choose Us</div>
+        <div class="accordion-content">
+          We combine technology, speed, and reliability to meet the delivery demands of today’s world.
+        </div>
+      </div>
+      <div class="accordion-section">
+        <div class="accordion-header"><i class="fas fa-bullseye"></i>Our Mission</div>
+        <div class="accordion-content">
+          To redefine logistics by delivering faster, safer, and smarter across the globe.
+        </div>
+      </div>
+      <div class="accordion-section">
+        <div class="accordion-header"><i class="fas fa-eye"></i>Our Vision</div>
+        <div class="accordion-content">
+          To become the most reliable logistics provider in the world through innovation and integrity.
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="row g-3">
+        <div class="col-sm-6">
+          <div class="card border-0 shadow-sm h-100">
+            <img src="{% static 'img/cart_1.jpg' %}" class="card-img-top" alt="Road Freight">
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card text-center border-0 shadow-sm h-100 py-4">
+            <div class="card-body">
+              <i class="fas fa-shield-alt fa-2x text-danger mb-3"></i>
+              <h6 class="fw-bold">Trusted Services</h6>
+              <p class="small text-muted">Handled with care, speed, and security.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card border-0 shadow-sm h-100">
+            <img src="{% static 'img/cart_2.jpg' %}" class="card-img-top" alt="Air Freight">
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card text-center border-0 shadow-sm h-100 py-4">
+            <div class="card-body">
+              <i class="fas fa-globe-americas fa-2x text-danger mb-3"></i>
+              <h6 class="fw-bold">Global Reach</h6>
+              <p class="small text-muted">Covering continents with precision.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<section class="our-services py-5 bg-light">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-4">Our Services</h2>
+    <p class="lead mb-5">Our experienced staff, combined with our global network, allow us to provide the support you need.</p>
+    
+    <div class="row g-4">
+      <!-- Cargo Transportation -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 border-0 shadow-sm p-3">
+          <i class="fas fa-truck fa-2x text-danger mb-3"></i>
+          <h5 class="fw-bold">Cargo Transportation</h5>
+          <p class="small text-muted">We offer the cheapest rates for the best service to and from the United States, for air and sea freight.</p>
+        </div>
+      </div>
+      
+      <!-- Air Freight -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 border-0 shadow-sm p-3">
+          <i class="fas fa-plane fa-2x text-danger mb-3"></i>
+          <h5 class="fw-bold">Air Freight</h5>
+          <p class="small text-muted">We offer shipment of goods through an air carrier—ideal for express deliveries around the globe.</p>
+        </div>
+      </div>
+
+      <!-- Ocean Freight -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 border-0 shadow-sm p-3">
+          <i class="fas fa-ship fa-2x text-danger mb-3"></i>
+          <h5 class="fw-bold">Ocean Freight</h5>
+          <p class="small text-muted">Affordable shipping for bulk and lightweight packages, with reliable global coverage.</p>
+        </div>
+      </div>
+
+      <!-- Packaging & Storage -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 border-0 shadow-sm p-3">
+          <i class="fas fa-box-open fa-2x text-danger mb-3"></i>
+          <h5 class="fw-bold">Packaging & Storage</h5>
+          <p class="small text-muted">We ensure parcels are securely packaged and safely stored, arriving untampered and on time.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="mt-3 text-center">
+  <a id="showMoreBtn" href="#" class="btn btn-danger px-3 py-1 fw-semibold" style="font-size: 0.75rem;">
+    Show More <i class="fas fa-arrow-right ms-1" style="font-size: 0.65rem;"></i>
+  </a>
+</div>
+
+<script>
+  const showMoreBtn = document.getElementById('showMoreBtn');
+  showMoreBtn.addEventListener('click', function (e) {
+    e.preventDefault(); // Prevent default anchor behavior
+
+    // Simulate dropdown toggle (if needed visually)
+    const dropdownToggle = document.getElementById('servicesDropdown');
+    dropdownToggle.click(); // open dropdown
+
+    // Redirect after short delay
+    setTimeout(() => {
+      window.location.href = "{% url 'cargo_transportation' %}";
+    }, 100);
+  });
+</script>
+
+
+</section>
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Latest From Our Blog</h2>
+      <p class="text-muted">Stay informed with our latest logistics news and insights.</p>
+    </div>
+    <div class="row g-4">
+      <!-- Blog Card 1 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-0">
+          <img src="{% static 'img/blog_image1.jpg' %}" class="card-img-top" alt="Blog Post 1">
+          <div class="card-body">
+            <h5 class="card-title fw-semibold">How to Choose the Right Shipping Option</h5>
+            <p class="card-text small text-muted">Learn the differences between air, sea, and road freight and which is best for your business.</p>
+            <a href="#" class="text-danger fw-semibold">Read More <i class="fas fa-arrow-right ms-1"></i></a>
+          </div>
+        </div>
+      </div>
+      <!-- Blog Card 2 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-0">
+          <img src="{% static 'img/blog_image2.jpg' %}" class="card-img-top" alt="Blog Post 2">
+          <div class="card-body">
+            <h5 class="card-title fw-semibold">5 Tips for Hassle-Free Packaging</h5>
+            <p class="card-text small text-muted">Discover how to properly package your items for secure and safe delivery every time.</p>
+            <a href="#" class="text-danger fw-semibold">Read More <i class="fas fa-arrow-right ms-1"></i></a>
+          </div>
+        </div>
+      </div>
+      <!-- Blog Card 3 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-0">
+          <img src="{% static 'img/blog_image3.jpg' %}" class="card-img-top" alt="Blog Post 3">
+          <div class="card-body">
+            <h5 class="card-title fw-semibold">Why Timely Delivery Matters</h5>
+            <p class="card-text small text-muted">Explore how prompt delivery boosts customer satisfaction and builds trust in logistics.</p>
+            <a href="#" class="text-danger fw-semibold">Read More <i class="fas fa-arrow-right ms-1"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{% endblock %}

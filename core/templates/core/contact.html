@@ -1,0 +1,142 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="contact-section py-5 mt-5 pt-5">
+  <div class="container">
+    <div class="text-center mb-4">
+      <h2 class="fw-bold"><i class="fas fa-envelope text-danger me-2"></i> Contact Us</h2>
+      <p class="text-muted">We're here to help. Send us a message and we’ll get back to you shortly.</p>
+    </div>
+    
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <form method="post" action="">
+          {% csrf_token %}
+          <div class="mb-3">
+            <label for="name" class="form-label fw-semibold">Full Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name" required>
+          </div>
+          <div class="mb-3">
+            <label for="phone" class="form-label fw-semibold">Phone Number</label>
+            <input type="tel" class="form-control" id="phone" name="phone" placeholder="e.g. +1(438) 795 4491" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label fw-semibold">Email Address</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="example@mail.com" required>
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label fw-semibold">Message</label>
+            <textarea class="form-control" id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+          </div>
+          <div class="text-end">
+            <button type="submit" class="btn btn-danger px-4">Send Message</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+{% if messages %}
+  {% for message in messages %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      {{ message }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  {% endfor %}
+{% endif %}
+{% if form.errors %}
+  <div class="alert alert-danger">
+    Please fill in all required fields.
+  </div>
+{% endif %}
+
+<style>
+.tracking-hero {
+  background: url("{% static 'img/tracking_image.jpg' %}") no-repeat center center;
+  background-size: cover;
+  padding: 100px 0;
+  color: white;
+  position: relative;
+}
+
+.tracking-hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Optional dark overlay */
+  z-index: 1;
+}
+
+.tracking-hero .container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.tracking-content h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.tracking-content p {
+  font-size: 1rem;
+  max-width: 600px;
+}
+
+.tracking-actions {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.action-box {
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+  min-width: 120px;
+  transition: all 0.3s ease;
+}
+
+.action-box:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+}
+
+.action-box i {
+  display: block;
+  margin-bottom: 10px;
+}
+</style>
+<section class="tracking-hero">
+  <div class="container">
+    <div class="tracking-content">
+      <h2>Unbeatable Trucking and Transport Services</h2>
+      <p>Delivering reliable, fast, and affordable transport solutions across land, air, and sea to meet your logistics needs.</p>
+    </div>
+    <div class="tracking-actions">
+      <a href="https://wa.me/?text=Check%20out%20TitanProXpress%20for%20reliable%20logistics%20services%3A%20https%3A%2F%2Ftitanproxpress.com" target="_blank" class="action-box">
+        <i class="fas fa-user-friends fa-2x"></i>
+        <span>Tell Friend</span>
+      </a>
+      <a href="/about" class="action-box">
+        <i class="fas fa-file-alt fa-2x"></i>
+        <span>Read More</span>
+      </a>
+      <a href="mailto:info@titanproxpress.com" class="action-box">
+        <i class="fas fa-envelope fa-2x"></i>
+        <span>Contact Us</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

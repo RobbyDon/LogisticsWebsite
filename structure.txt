@@ -1,0 +1,60 @@
+Folder PATH listing
+Volume serial number is 68C8-CCC0
+C:.
+¦   db.sqlite3
+¦   manage.py
+¦   structure.txt
+¦   
++---core
+¦   ¦   admin.py
+¦   ¦   apps.py
+¦   ¦   models.py
+¦   ¦   tests.py
+¦   ¦   views.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---migrations
+¦   ¦   ¦   __init__.py
+¦   ¦   ¦   
+¦   ¦   +---__pycache__
+¦   ¦           __init__.cpython-311.pyc
+¦   ¦           
+¦   +---static
+¦   ¦   ¦   script.js
+¦   ¦   ¦   
+¦   ¦   +---img
+¦   ¦           Carousel_1.jpg
+¦   ¦           Carousel_2.jpg
+¦   ¦           Carousel_3.jpg
+¦   ¦           Carousel_4.jpg
+¦   ¦           cart_1.jpg
+¦   ¦           cart_2.jpg
+¦   ¦           logo.png
+¦   ¦           style.css
+¦   ¦           
+¦   +---templates
+¦   ¦   +---core
+¦   ¦           index.html
+¦   ¦           tracking_form.html
+¦   ¦           tracking_results.html
+¦   ¦           
+¦   +---__pycache__
+¦           admin.cpython-311.pyc
+¦           apps.cpython-311.pyc
+¦           models.cpython-311.pyc
+¦           views.cpython-311.pyc
+¦           __init__.cpython-311.pyc
+¦           
++---sprintparcel
+    ¦   asgi.py
+    ¦   settings.py
+    ¦   urls.py
+    ¦   wsgi.py
+    ¦   __init__.py
+    ¦   
+    +---__pycache__
+            settings.cpython-311.pyc
+            urls.cpython-311.pyc
+            wsgi.cpython-311.pyc
+            __init__.cpython-311.pyc
+            
